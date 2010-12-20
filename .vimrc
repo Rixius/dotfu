@@ -143,10 +143,13 @@ augroup END
 augroup filetypedetection
   autocmd!
   autocmd BufNewFile,BufRead *.haml set ft=haml
+  autocmd BufNewFile,BufRead *.jade set ft=jade
   autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
     \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
   autocmd FileType java setlocal et sw=2 sts=2
   autocmd FileType javascript,coffee setlocal et sw=2 sts=2 isk+=$
+  autocmd BufNewFile,BufRead Gemfile set ft=ruby
+  autocmd BufNewFile,BufRead *.ru set ft=ruby
   autocmd FileType eruby,yaml,ruby setlocal et sw=2 sts=2
   autocmd FileType gitcommit setlocal spell
   autocmd FileType ruby setlocal comments=:#\  tw=79

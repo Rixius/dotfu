@@ -1,0 +1,5 @@
+# Always sort files
+--sort-files
+
+# Ignore directories
+--ignore-dir=node_modules
