@@ -20,6 +20,7 @@ get_bundle bufexplorer markabe
 get_bundle nerdcommenter scrooloose
 get_bundle nerdtree scrooloose
 get_bundle tabular godlygeek
+get_bundle VimClojure vim-scripts
 get_bundle vim-abolish tpope
 get_bundle vim-bufonly duff
 get_bundle vim-coffee-script kchmck

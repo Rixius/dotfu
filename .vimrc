@@ -110,6 +110,31 @@ let g:Tlist_Sort_Type="name"
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
 
+function! RunSpec(Line)
+  let file = expand('%')
+
+  if a:Line != ''
+    let line = ':'.a:Line
+  else
+    let line = ''
+  endif
+
+  if file =~ '_spec\.rb$'
+    let command = 'bundle exec rspec'
+  else
+    return 1
+  endif
+
+  exe '!'.command.' '.file.line
+endfunction
+
+:map <Leader>r :call RunSpec(line('.'))<C-m>
+:map <Leader>R :call RunSpec('')<C-m>
+
+" VimClojure
+let vimclojure#HighlightBuiltins=1
+let vimclojure#ParenRainbow=1
+
 augroup vimrc
   autocmd!
   autocmd GuiEnter * set guifont=Monaco:h16 guioptions-=T columns=120 lines=70 number
@@ -120,10 +145,12 @@ augroup filetypedetection
   autocmd BufNewFile,BufRead *.haml set ft=haml
   autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
     \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
+  autocmd FileType java setlocal et sw=2 sts=2
   autocmd FileType javascript,coffee setlocal et sw=2 sts=2 isk+=$
   autocmd FileType eruby,yaml,ruby setlocal et sw=2 sts=2
   autocmd FileType gitcommit setlocal spell
   autocmd FileType ruby setlocal comments=:#\  tw=79
+  autocmd FileType sql setlocal et sw=2 sts=2
   autocmd FileType vim setlocal et sw=2 sts=2 keywordprg=:help
 
   autocmd Syntax css syn sync minlines=50
