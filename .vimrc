@@ -18,6 +18,7 @@ if &grepprg ==# 'grep -n $* /dev/null'
   set grepprg=grep\ -rnH\ --exclude='.*.swp'\ --exclude='*~'\ --exclude='*.log'\ --exclude=tags\ $*\ /dev/null
 endif
 set incsearch
+set ignorecase
 set laststatus=2 " Always show status line
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set list " Show trailing whitespace and tabs
@@ -27,6 +28,9 @@ set sidescrolloff=5
 set showcmd
 set showmatch
 set smarttab
+set expandtab
+set tabstop=2
+set shiftwidth=4
 
 set ttimeoutlen=50 " Make ESC work faster
 set wildmenu
@@ -135,9 +139,17 @@ endfunction
 let vimclojure#HighlightBuiltins=1
 let vimclojure#ParenRainbow=1
 
+if has('gui_running')
+  let moria_style = 'dark'
+  colorscheme moria
+else
+  " colorscheme vividchalk
+  colorscheme desert256
+endif
+
 augroup vimrc
   autocmd!
-  autocmd GuiEnter * set guifont=Monaco:h16 guioptions-=T columns=120 lines=70 number
+  autocmd GuiEnter * set guifont=Monaco:h12 guioptions-=T guioptions-=L guioptions-=r fuoptions=maxvert,maxhorz
 augroup END
 
 augroup filetypedetection
@@ -155,6 +167,10 @@ augroup filetypedetection
   autocmd FileType ruby setlocal comments=:#\  tw=79
   autocmd FileType sql setlocal et sw=2 sts=2
   autocmd FileType vim setlocal et sw=2 sts=2 keywordprg=:help
+
+  " Scala
+  autocmd BufNewFile,BufRead *.scala set filetype=scala
+  autocmd FileType scala setlocal et sw=2 sts=2
 
   autocmd Syntax css syn sync minlines=50
 augroup END
