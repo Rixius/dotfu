@@ -143,8 +143,8 @@ if has('gui_running')
   let moria_style = 'dark'
   colorscheme moria
 else
-  " colorscheme vividchalk
-  colorscheme desert256
+  colorscheme vividchalk
+  " colorscheme desert256
 endif
 
 augroup vimrc

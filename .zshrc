@@ -20,6 +20,8 @@ function tm {
   tmux attach || tmux
 }
 
+alias x=exit
+
 export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 unsetopt auto_name_dirs

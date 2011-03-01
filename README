@@ -1,0 +1,4 @@
+# Vim
+
+symlink .vim and .vimrc
+run bin/vimbundles to install plugins
