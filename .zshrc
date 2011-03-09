@@ -1,30 +1,56 @@
-export EDITOR=vim
-
+# Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="chris"
 
-plugins=(git ruby vi-mode)
+# Set to the name theme to load.
+# Look in ~/.oh-my-zsh/themes/
+export ZSH_THEME="rixius"
+
+# Set to this to use case-sensitive completion
+# export CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# export DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# export DISABLE_LS_COLORS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git github textmate ruby)
+
+# If using plugin github, enable these with the settings to makes use of the commands
+export ZSH_PLUGIN_GITHUB_USERNAME="Rixius"
+export ZSH_PLUGIN_GITHUB_TOKEN="56ee44ba1e5100af5f5d3a249f28b8d0"
 
 source $ZSH/oh-my-zsh.sh
 
-bindkey '^?' backward-delete-char
+# Customize to your needs...
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
+if [[ `pwd` = "$HOME" ]]; then
+  cd $HOME/src
+fi
 
-function authme {
-  ssh $@ 'cat >>.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
-}
+export BAT_CHARGE=$HOME/.bin/bat
 
-function tm {
-  tmux attach || tmux
-}
+export PATH\
+=$HOME/src/dot-fu/bin\
+:$HOME/.bin\
+:$HOME/src/wieck_scripts\
+:$HOME/src/willGit/bin\
+:$HOME/src/android-sdk-mac/tools\
+:$HOME/src/android-sdk-mac/platform-tools\
+:/Applications/Racket/bin\
+:/usr/local/bin\
+:/usr/local/sbin\
+:/usr/bin:/bin\
+:/usr/sbin\
+:/sbin\
+:/usr/X11/bin 
 
-alias x=exit
+alias zz='clear'
+alias jj='java -jar'
+source ~/src/dot-fu/include/bundler.sh
+source ~/src/dot-fu/include/NewsroomTools.sh
 
-export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-unsetopt auto_name_dirs
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+export nytsyn_dev_default_db="postgres://localhost/nytsyn_development"

@@ -25,8 +25,8 @@ get_bundle VimClojure vim-scripts
 get_bundle vim-abolish tpope
 get_bundle vim-bufonly duff
 get_bundle vim-coffee-script kchmck
-get_bundle vim-cucumber tpope
-get_bundle vim-endwise tpope
+get_bundle vim-cucumber tpope 
+get_bundle vim-endwise tpope 
 get_bundle vim-fugitive tpope
 get_bundle vim-git tpope
 get_bundle vim-haml tpope
@@ -50,3 +50,4 @@ get_bundle vim-surround tpope
 get_bundle vim-taglist chrismetcalf
 get_bundle vim-unimpaired tpope
 get_bundle vim-vividchalk tpope
+get_bundle vim-sparkup kogakure
