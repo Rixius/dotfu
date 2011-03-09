@@ -48,8 +48,10 @@ export PATH\
 :/sbin\
 :/usr/X11/bin 
 
-alias zz='clear'
-alias jj='java -jar'
+
+
+
+source ~/src/dot-fu/include/alias.sh
 source ~/src/dot-fu/include/bundler.sh
 source ~/src/dot-fu/include/NewsroomTools.sh
 
