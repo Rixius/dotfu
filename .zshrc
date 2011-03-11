@@ -56,3 +56,7 @@ source ~/src/dot-fu/include/bundler.sh
 source ~/src/dot-fu/include/NewsroomTools.sh
 
 export nytsyn_dev_default_db="postgres://localhost/nytsyn_development"
+
+tm() {
+  tmux attach || tmux
+}

@@ -62,12 +62,15 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-
+" map Ctrl+j/k to delete the line above/below and Alt-j/k to add a line
+" above/below
 nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
+" map Comand+Space to return for faster command entering and file navigation
+map <D-Space> <CR>
 
 nmap <leader>w :w<cr> " Fast saving
 
