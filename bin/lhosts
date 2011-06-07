@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+def up ali, host = "lo0"
+    if ENV['RUN']
+        `ifconfig #{host} alias #{ali} up`
+    else
+        puts "running `ifconfig #{host} alias #{ali} up'"
+    end
+end
+range = (0..255)
+range.each do |x|
+    break if x > 0
+    range.each do |y|
+        break if y > 0
+        range.each do |z|
+            next unless z > 0
+            up "127.#{x}.#{y}.#{z}"
+        end
+    end
+end
