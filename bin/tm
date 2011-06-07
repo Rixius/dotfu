@@ -1,0 +1,115 @@
+#!/bin/bash
+function header(){
+    cat <<EOL
+/-----------------------------------\\
+|    _________  ___                 |
+|   /______/  |/   |  by:           |
+|    /  / / /|  /| |   Stephen      |
+|   /__/ /_/ |_/ |_|   "Rixius"     |
+EOL
+}
+function help() {
+    cat <<EOL
+>-----------------------------------<
+| Usage:                            |
+|    tm [-lh][ -ct sessionName]     |
+| Options:                          |
+|    -t targetSession               |
+|    -c create if it doesn't exist  |
+|    -l list open sessions          |
+|    -h display this help           |
+EOL
+    if [[ ! -n "$BOTH" ]]; then
+        echo "\\-----------------------------------/"
+    fi
+}
+function listSessions() {
+    tmux ls >/dev/null 2>&1 || exit 1
+    tmux ls | awk 'BEGIN {
+                            print ">-----------------------------------<";
+                            print "|           Tmux Sessions:          |";
+                            print "|             •=attached            |";
+                            print "|-----------------------------------|";
+                         }
+                         {
+                            z=substr( $1, 1, length($1)-1 );
+                            if ($11){
+                                z=z "•";
+                                pad=1;
+                            } else { pad=0; }
+                            l=length(z);
+                            s=int((36-l)/2);
+                            printf "|";
+                            printf "%"(s+l+pad)"s", z;
+                            if ( l % 2 != 0 ) {
+                                printf " ";
+                            }
+                            printf "%"(s-1+pad)"s"," ";
+                            printf "|\n";
+                         }
+                   END   {
+                            printf "\\-----------------------------------/\n"
+                         }'
+}
+function killSession() {
+    if [[ -n $1 ]]; then
+        echo "Killing Session $1"
+        tmux kill-session -t $1
+    else
+        echo "You must enter a session name to kill.\n-l will show a list of open sessions."
+        exit 1
+    fi
+}
+function bindSession() {
+# make session if not exists
+if [[ -n `tmux has-session -t $1 2>&1` ]]; then
+    if [[ -n $CREATE ]]; then
+        echo "Session $1 does not exist, creating it now."
+        tmux new-session -s $1
+    else
+        echo "Session $1 does not exist, use -ct to create it before binding"
+        exit 1
+    fi
+    # tmux new-session -ds $1
+else
+    tmux attach-session -t $1
+fi
+
+# finally attach to the declared session"
+# tmux attach-session -t $1
+}
+# if no arguments or manuall call show help
+while getopts "hk:lct:" OPTION; do
+    case $OPTION in
+        k)
+            killSession $OPTARG
+            exit 0
+            ;;
+        c)
+            CREATE=true
+            ;;
+        t)
+            bindSession $OPTARG
+            exit 0
+            ;;
+        l)
+            header
+            listSessions
+            exit 1
+            ;;
+        ?)
+            header
+            help
+            exit 1
+            ;;
+        h)
+            help
+            exit 1
+            ;;
+    esac
+done
+BOTH=true
+header
+help
+listSessions
+exit 1
