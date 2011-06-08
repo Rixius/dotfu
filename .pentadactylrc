@@ -1,6 +1,0 @@
-"1.0b5 (created: 2011/01/19 03:34:56)
-
-loadplugins '\.(js|penta)$'
-set passkeys='https?://mail.google.com/':jkgie#<Return>,'https://www\.google\.com/reader':nplmsSt
-
-" vim: set ft=pentadactyl:
