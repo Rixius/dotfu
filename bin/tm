@@ -114,7 +114,7 @@ while getopts "hk:lc" OPTION; do
 done
 
 if [ "$1" ]; then
-    bindSession $1
+    bindSession `downcase <(echo $1)`
 else
     BOTH=true
     header
