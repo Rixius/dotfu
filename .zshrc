@@ -20,7 +20,7 @@ plugins=(git github ruby)
 
 # If using plugin github, enable these with the settings to makes use of the commands
 export ZSH_PLUGIN_GITHUB_USERNAME="Rixius"
-export ZSH_PLUGIN_GITHUB_TOKEN="56ee44ba1e5100af5f5d3a249f28b8d0"
+export ZSH_PLUGIN_GITHUB_TOKEN=""
 
 source $ZSH/oh-my-zsh.sh
 
