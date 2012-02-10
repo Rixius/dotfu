@@ -41,4 +41,6 @@ export IRBC="$HOME/.irbc"
 export nytsyn_dev_default_db="postgres://localhost/nytsyn_development"
 export ENVIRONMENT='development'
 
+export SHELL="/bin/zsh"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

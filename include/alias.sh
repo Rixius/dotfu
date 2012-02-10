@@ -19,3 +19,5 @@ function skey(){
         eval `ssh-agent -k`
     fi
 }
+
+alias clip='xclip -selection clipboard'
