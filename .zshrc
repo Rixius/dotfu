@@ -29,16 +29,12 @@ if [[ `pwd` = "$HOME" ]]; then
   cd $HOME/src
 fi
 
-export BAT_CHARGE=$HOME/.bin/bat
-
 source ~/src/dot-fu/include/path.sh
 source ~/src/dot-fu/include/alias.sh
 source ~/src/dot-fu/include/bundler.sh
-source ~/src/dot-fu/include/NewsroomTools.sh
 
 export IRBC="$HOME/.irbc"
 
-export nytsyn_dev_default_db="postgres://localhost/nytsyn_development"
 export ENVIRONMENT='development'
 
 export SHELL="/bin/zsh"
