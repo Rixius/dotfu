@@ -40,3 +40,10 @@ export ENVIRONMENT='development'
 export SHELL="/bin/zsh"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+fpath=($HOME/src/dot-fu/functions $fpath)
+export fpath
+autoload -U compinit
+compinit
+
+zstyle ':completion:*' menu select=2
