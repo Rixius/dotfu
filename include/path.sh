@@ -1,6 +1,7 @@
 export PATH\
 =$HOME/src/dot-fu/bin\
 :$HOME/.bin\
+:$HOME/local/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :/usr/bin\
