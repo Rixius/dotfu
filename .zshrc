@@ -29,9 +29,9 @@ if [[ `pwd` = "$HOME" ]]; then
   cd $HOME/src
 fi
 
-source ~/src/dot-fu/include/path.sh
-source ~/src/dot-fu/include/alias.sh
-source ~/src/dot-fu/include/bundler.sh
+source ~/src/.fu/include/path.sh
+source ~/src/.fu/include/alias.sh
+source ~/src/.fu/include/bundler.sh
 
 export IRBC="$HOME/.irbc"
 
@@ -41,7 +41,7 @@ export SHELL="/bin/zsh"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-fpath=($HOME/src/dot-fu/functions $fpath)
+fpath=($HOME/src/.fu/functions $fpath)
 export fpath
 autoload -U compinit
 compinit
