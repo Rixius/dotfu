@@ -25,9 +25,9 @@ export ZSH_PLUGIN_GITHUB_TOKEN=""
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-if [[ `pwd` = "$HOME" ]]; then
-  cd $HOME/src
-fi
+#if [[ `pwd` = "$HOME" ]]; then
+  #cd $HOME/src
+#fi
 
 source ~/src/.fu/include/path.sh
 source ~/src/.fu/include/alias.sh
@@ -47,3 +47,6 @@ autoload -U compinit
 compinit
 
 zstyle ':completion:*' menu select=2
+
+# Allow for per-computer specilizations.
+[ -f $HOME/.zshrc_overide ] && source ~/.zshrc_overide
