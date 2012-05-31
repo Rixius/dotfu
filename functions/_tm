@@ -1,7 +1,9 @@
 #compdef tm
 
 _tm(){
-  compadd $(tmux ls | awk '{ print substr( $1, 1, length($1)-1 ); print " " }') -c
+  if tmux ls >/dev/null 2>&1; then
+    compadd $(tmux ls | awk '{ print substr( $1, 1, length($1)-1 ); print " " }') -c
+  fi
 }
 
 _tm "$@"
