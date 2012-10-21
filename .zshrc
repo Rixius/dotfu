@@ -1,5 +1,8 @@
+# Path to .fu
+export DOTFU=$home/src/.fu
+
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$DOTFU/oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -18,20 +21,12 @@ export ZSH_THEME="rixius"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git github ruby)
 
-# If using plugin github, enable these with the settings to makes use of the commands
-export ZSH_PLUGIN_GITHUB_USERNAME="Rixius"
-export ZSH_PLUGIN_GITHUB_TOKEN=""
-
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-#if [[ `pwd` = "$HOME" ]]; then
-  #cd $HOME/src
-#fi
-
-source ~/src/.fu/include/path.sh
-source ~/src/.fu/include/alias.sh
-source ~/src/.fu/include/bundler.sh
+source $DOTFU/include/path.sh
+source $DOTFU/include/alias.sh
+source $DOTFU/include/bundler.sh
 
 export IRBC="$HOME/.irbc"
 
