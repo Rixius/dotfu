@@ -1,5 +1,5 @@
 # Path to .fu
-export DOTFU=$home/src/.fu
+export DOTFU=$HOME/src/.fu
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$DOTFU/oh-my-zsh
