@@ -1,3 +1,11 @@
+"-----------------\
+" Pathogen Plugins >
+"-----------------/
+runtime! autoload/pathogen.vim
+if exists('g:loaded_pathogen')
+  call pathogen#runtime_prepend_subdirectories(expand('~/.vim/bundle'))
+endif
+
 "--------------\
 " Core Features >
 "--------------/
@@ -59,14 +67,6 @@ map <C-l> <C-W>l
 " reload vimrc swiftly
 map <leader>r :source ~/.vimrc<cr>
 
-
-"-----------------\
-" Pathogen Plugins >
-"-----------------/
-runtime! autoload/pathogen.vim
-if exists('g:loaded_pathogen')
-  call pathogen#runtime_prepend_subdirectories(expand('~/.vimbundles'))
-endif
 
 "-------------------\
 " NERDTree / Comment >
