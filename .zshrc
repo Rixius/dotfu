@@ -2,7 +2,7 @@
 export DOTFU=$HOME/src/.fu
 
 # Path to your oh-my-zsh configuration.
-export ZSH=$DOTFU/oh-my-zsh
+export ZSH=$DOTFU/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
