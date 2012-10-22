@@ -76,7 +76,7 @@ map <C-l> <C-W>l
 if has("autocmd")
     autocmd BufWritePost .vimrc source $MYVIMRC
 endif
-nmap <leader>v :vsp $MYVIMRC<cr>
+nmap <leader>ev :vsp $MYVIMRC<cr>
 
 
 "-------------------\
