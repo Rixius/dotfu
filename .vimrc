@@ -9,6 +9,7 @@ call pathogen#infect()
 set nocompatible            " Overides distro default and resets to sane standards
 filetype indent plugin on   " Attempts to determine filetype
 syntax on                   " Enable syntax highlighting
+colorscheme desert
 
 "-----------------\
 " Core Set Options >
@@ -41,6 +42,12 @@ set tabstop=2
 set smarttab
 set expandtab
 set shiftwidth=4
+
+"------------\
+" Search Opts >
+"------------/
+map <leader>s :set hlsearch!<cr>
+
 "----------\
 " No Backup >
 "----------/
@@ -61,8 +68,15 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-" reload vimrc swiftly
-map <leader>r :source ~/.vimrc<cr>
+
+"------------------------\
+" Swift vimrc development >
+"------------------------/
+
+if has("autocmd")
+    autocmd BufWritePost .vimrc source $MYVIMRC
+endif
+nmap <leader>v :vsp $MYVIMRC<cr>
 
 
 "-------------------\
