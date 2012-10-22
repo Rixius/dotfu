@@ -34,8 +34,6 @@ export ENVIRONMENT='development'
 
 export SHELL="/bin/zsh"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 fpath=($HOME/src/.fu/functions $fpath)
 export fpath
 autoload -U compinit
@@ -45,3 +43,5 @@ zstyle ':completion:*' menu select=2
 
 # Allow for per-computer specilizations.
 [ -f $HOME/.zshrc_overide ] && source ~/.zshrc_overide
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+which rvm >/dev/null 2>&1 && export PATH=$PATH:$HOME/.rvm/bin
