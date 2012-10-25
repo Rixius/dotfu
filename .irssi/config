@@ -1,6 +1,11 @@
 settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "xchat"; };
+  core = {
+    real_name = "Stephen \"Rixius\" Middleton";
+    user_name = "rixius";
+    nick = "rixius";
+  };
 };
 servers = (
   {

@@ -4,6 +4,7 @@ export PATH\
 :$HOME/local/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
+:/usr/local/heroku/bin\
 :/usr/bin\
 :/bin\
 :/usr/sbin\

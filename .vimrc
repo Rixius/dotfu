@@ -59,8 +59,8 @@ set noswapfile
 " Core Maps >
 "----------/
 " Overide Leader
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 " Map alternate Buffer to easier command
 map <C-A> <C-^>
 " Map C-Directions to changing space
