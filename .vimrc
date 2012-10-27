@@ -58,24 +58,33 @@ set noswapfile
 "----------\
 " Core Maps >
 "----------/
+
 " Overide Leader
 let mapleader = " "
 let g:mapleader = " "
 " Map alternate Buffer to easier command
-map <C-A> <C-^>
+noremap <C-A> <C-^>
 " Map C-Directions to changing space
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+noremap   <up>      <nop>
+noremap   <left>    <nop>
+noremap   <right>   <nop>
+noremap   <down>    <nop>
+
+inoremap jk <esc>
 
 "------------------------\
 " Swift vimrc development >
 "------------------------/
 
-if has("autocmd")
-    autocmd BufWritePost .vimrc source $MYVIMRC
-endif
+augroup vimrc_development
+  autocmd!
+  autocmd BufWritePost .vimrc source $MYVIMRC
+augroup END
 nmap <leader>ev :vsp $MYVIMRC<cr>
 
 
