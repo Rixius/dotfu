@@ -2,6 +2,8 @@ alias jj='java -jar'
 alias zz='clear'
 alias mate='vim -'
 
+alias ls='ls -a --color=tty'
+
 alias :r='source $HOME/.zshrc'
 
 alias  :q='exit'
