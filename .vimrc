@@ -64,6 +64,7 @@ let mapleader = " "
 let g:mapleader = " "
 " Map alternate Buffer to easier command
 noremap <C-A> <C-^>
+
 " Map C-Directions to changing space
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
@@ -75,7 +76,8 @@ noremap   <left>    <nop>
 noremap   <right>   <nop>
 noremap   <down>    <nop>
 
-inoremap jk <esc>
+inoremap   jk      <esc>
+inoremap   <esc>   <nop>
 
 "------------------------\
 " Swift vimrc development >
