@@ -24,4 +24,4 @@ function skey(){
 
 alias clip='xclip -selection clipboard'
 
-which pcmanfm >/dev/null && alias fs='pcmanfm'
+#which pcmanfm >/dev/null && alias fs='pcmanfm'
