@@ -2,6 +2,7 @@ export PATH\
 =$HOME/src/.fu/bin\
 :$HOME/.bin\
 :$HOME/local/bin\
+:/usr/local/heroku/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
 :/usr/local/heroku/bin\
