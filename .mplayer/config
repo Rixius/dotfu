@@ -7,4 +7,20 @@ vf="scale=1280:800"
 
 monitoraspect="16:9" # Prevent 4:3 from streching?
 framedrop="1" # For 'slow' machines, like mine.
+hardframedrop="1"
 
+
+# This sets the postprocessing into overdrive using all possible spare CPU Cycles
+#autoq=100
+#vf=pp=de,hqdn3d
+
+#double=yes
+
+unicode=yes
+utf8=yes
+subfont-encoding=unicode
+
+
+
+autosync=30
+#mc=0.2
