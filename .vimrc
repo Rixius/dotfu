@@ -49,8 +49,6 @@ let mapleader = " "
 let g:mapleader = " "
 
 map <leader>s :set hlsearch!<cr>
-" Map alternate Buffer to easier command
-noremap <C-A> <C-^>
 
 " Map C-Directions to changing space
 noremap <C-j> <C-W>j
