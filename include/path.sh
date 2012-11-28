@@ -1,9 +1,6 @@
 export NODE_PATH=\
 /usr/local/lib/node
 
-export PSPDEV=\
-$HOME/src/psp
-
 export PATH\
 =$HOME/src/.fu/bin\
 :$HOME/.bin\
