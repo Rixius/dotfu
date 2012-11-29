@@ -13,28 +13,19 @@ colorscheme desert
 
 set hidden            " Allows swapping of buffers without saving
 set wildmenu          " Better command-line completion
-set nomodeline        " History of being highly insecure
-set ignorecase
 set smartcase         " Insensitive Searches
-set autoindent        " Autoindent
 set backspace=indent,eol,start
                       " Allow backspacing over listed parts
-"set nostartofline     " Prevent certain actions from returning to the start
 set number            " Display the number Lines
 set ruler             " Display Cursor position
 set laststatus=2      " Always display the status line
 set confirm           " If command requires saved file prompt to save file
-set visualbell
 set t_vb=             " Disables any errors
 set cmdheight=2       " Avoid \"press <Enter> to continue"
-set ttimeoutlen=125   " Timeout keycommands swiftly
-set pastetoggle=<F11> " Toggle Pastemode with Key
 
-set listchars=tab:>\ ,trail:-
+set listchars=tab:▸\ ,trail:-,eol:¬
 set tabstop=2
-set smarttab
-set expandtab
-set shiftwidth=4
+set shiftwidth=2
 
 set nobackup
 set nowb
@@ -48,7 +39,8 @@ set noswapfile
 let mapleader = " "
 let g:mapleader = " "
 
-map <leader>s :set hlsearch!<cr>
+noremap <leader>s :set hlsearch!<cr>
+noremap <leader>l :set list!<cr>
 
 " Map C-Directions to changing space
 noremap <C-j> <C-W>j
@@ -87,28 +79,17 @@ xmap \\ <Plug>NERDCommenterInvert
 " Filetype Detection TODO: Sort out! ---------------------- {{{
 let g:is_bash = 1           " Highlight all .sh as bash
 let g:ruby_minlines = 500
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_rails = 1
 augroup filetypedetection
   autocmd!
   autocmd BufNewFile,BufRead *.haml set ft=haml
   autocmd BufNewFile,BufRead *.jade set ft=jade
   autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
     \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
-  autocmd FileType java setlocal et sw=2 sts=2
-  autocmd FileType javascript,coffee setlocal et sw=2 sts=2 isk+=$
   autocmd BufNewFile,BufRead Gemfile set ft=ruby
   autocmd BufNewFile,BufRead *.ru set ft=ruby
-  autocmd FileType eruby,yaml,ruby setlocal et sw=2 sts=2
-  autocmd FileType gitcommit setlocal spell
-  autocmd FileType ruby setlocal comments=:#\  tw=79
-  autocmd FileType sql setlocal et sw=2 sts=2
+  autocmd FileType ruby setlocal comments=:#\ 
 
-  " Scala
-  autocmd BufNewFile,BufRead *.scala set filetype=scala
-  autocmd FileType scala setlocal et sw=2 sts=2
 
-  autocmd Syntax css syn sync minlines=50
 augroup END
 " }}}
 
@@ -117,7 +98,6 @@ augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
   autocmd FileType vim setlocal foldlevelstart=0
-  autocmd FileType vim setlocal et sw=2 sts=2 keywordprg=:help
 augroup END
 " }}}
 
