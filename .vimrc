@@ -4,7 +4,7 @@
 " (c) 2012 Stephen "Rixius" Middleton
 " Licensed under an MIT-Style Free and Open Software License
 "
-" Core Features ---------------------- {{{
+" Core Features{{{1
 call pathogen#infect()
 set nocompatible            " Overides distro default and resets to sane standards
 filetype indent plugin on   " Attempts to determine filetype
@@ -25,15 +25,15 @@ set cmdheight=2       " Avoid \"press <Enter> to continue"
 
 set listchars=tab:▸\ ,trail:-,eol:¬
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
+set noexpandtab
 
 set nobackup
 set nowb
 set noswapfile
 
-" }}}
-
-" Core Maps --------------------- {{{
+" Core Maps {{{1
 
 " Overide Leader
 let mapleader = " "
@@ -56,9 +56,12 @@ noremap   <down>    <nop>
 inoremap   jk      <esc>
 inoremap   <esc>   <nop>
 
-" }}}
+" Tab Movements
+"noremap <C-S-]> :gt<cr>
+"noremap <C-S-[> :gT<cr>
 
-" Swift vimrc development ----------------------- {{{
+
+" Swift vimrc development {{{1
 
 augroup vimrc_development
   autocmd!
@@ -66,17 +69,15 @@ augroup vimrc_development
 augroup END
 nmap <leader>ev :vsp $MYVIMRC<cr>
 
-" }}}
 
-" NERDTree/Comment----------------- {{{
+" NERDTree/Comment{{{1
 nmap <leader>p :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden=1
 let g:NERDTreeIgnore=['tags', '\.git', '\\index$', '\\log$', 'tmp', '\\pkg', '\.swp$', '\.db$', '\.gz$', '\.DS_Store', '\~$']
 nmap \\ <Plug>NERDCommenterInvert
 xmap \\ <Plug>NERDCommenterInvert
-" }}}
 
-" Filetype Detection TODO: Sort out! ---------------------- {{{
+" Filetype Detection TODO: Sort out! {{{1
 let g:is_bash = 1           " Highlight all .sh as bash
 let g:ruby_minlines = 500
 augroup filetypedetection
@@ -91,13 +92,11 @@ augroup filetypedetection
 
 
 augroup END
-" }}}
 
-" Vimscript file settings ---------------------- {{{
+" Vimscript file settings {{{1
 augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
   autocmd FileType vim setlocal foldlevelstart=0
 augroup END
-" }}}
 

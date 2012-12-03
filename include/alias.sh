@@ -3,6 +3,8 @@ alias zz='clear'
 
 alias ls='ls -a --color=tty'
 
+alias google='lynx http://google.com'
+
 alias rload="source $HOME/.zshrc"
 alias :r='source $HOME/.zshrc'
 
