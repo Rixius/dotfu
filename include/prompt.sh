@@ -20,7 +20,6 @@ function setprompt() {
 	local -a infoline promptline lines
 
 	# Setup the infoline
-	infoline+=( "${c[red]}⎡${c[reset]}" )
 	[[ $EUID -eq 0 ]] && infoline+=( "${c[red]}" ) || infoline+=( "${c[green]}" )
 	infoline+=( "%n" )
 	infoline+=( "${c[reset]}" )
@@ -28,7 +27,6 @@ function setprompt() {
 	infoline+=( ":%~" )
 
 	# Setup the promptline
-	promptline+=( "${c[red]}⎣${c[reset]}" )
 	promptline+=( "(" )
 	if [[ $1 -eq 0 ]]; then
 		promptline+=( "${c[green]}" )
@@ -48,7 +46,7 @@ function setprompt() {
 
 	# Setup the Lines
 	lines+=( ${(j::)infoline} )
-	[[ -n ${vcs_info_msg_0_} ]] && lines+=( "${c[red]}⎢${c[reset]}${c[gray]}${vcs_info_msg_0_}${c[reset]}" )
+	[[ -n ${vcs_info_msg_0_} ]] && lines+=( "${c[gray]}${vcs_info_msg_0_}${c[reset]}" )
 	lines+=( ${(j::)promptline} )
 
 	# Finally set the prompt >.>
