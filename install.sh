@@ -2,6 +2,7 @@
 
 function link() {
 
+	rm $HOME/$1
 	ln -s $PWD/$1 $HOME/$1
 
 }
