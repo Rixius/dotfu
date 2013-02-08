@@ -24,10 +24,10 @@ set t_vb=             " Disables any errors
 set cmdheight=2       " Avoid \"press <Enter> to continue"
 
 set listchars=tab:▸\ ,trail:-,eol:¬
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set noexpandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 set nobackup
 set nowb
@@ -41,6 +41,7 @@ let g:mapleader = " "
 
 noremap <leader>s :set hlsearch!<cr>
 noremap <leader>l :set list!<cr>
+nnoremap <leader>z <C-^>
 
 " Map C-Directions to changing space
 noremap <C-j> <C-W>j
@@ -100,3 +101,8 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldlevelstart=0
 augroup END
 
+" twig file handling {{{1
+augroup filetype_twig
+    autocmd!
+    autocmd BufNewFile,BufRead *.html.twig set ft=php
+augroup END
