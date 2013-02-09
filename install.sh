@@ -11,3 +11,5 @@ link .zshrc
 link .vimrc
 link .vim
 link .tmux.conf
+link .bash_profile
+link .bashrc
