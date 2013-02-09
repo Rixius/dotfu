@@ -1,7 +1,7 @@
 ###
 #
 #  Stephen "Rixius" Middleton .File
-#  License located at <URL_PENDING>
+#  License located at <https://github.com/Rixius/.fu/blob/master/LICENSE.md>
 #
 ###
 
