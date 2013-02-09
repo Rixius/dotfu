@@ -3,6 +3,6 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 # Load my Input modifications, things not needed in a Shell Script.
-if [ -f ~/src/.fu/include.bash/input.sh ]; then
-    . ~/src/.fu/include.bash/input.sh
+if [ -f ~/src/.fu/include/input.ba.sh ]; then
+    . ~/src/.fu/include/input.ba.sh
 fi
