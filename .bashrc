@@ -19,4 +19,5 @@ dotfu-import() {
 
 # Core Functionality
 dotfu-import $HOME/src/.fu/include/path.sh
+dotfu-import $HOME/src/.fu/include/prompt.ba.sh
 
