@@ -1,3 +1,4 @@
+
 # Colors
 export fg_black="[30m"
 export fg_red="[31m"
@@ -17,25 +18,57 @@ export bg_cyan="[46m"
 export bg_white="[47m"
 export normal="[0m"
 
-        set_promtp_colors()
-        {
-            if (( $? ))
-            then
-                prompt_beg=${bg_red}${fg_yellow}
-                prompt_end=${normal}
-            else
-                prompt_beg=${bg_blue}${fg_yellow}
-                prompt_end=${normal}
-            fi
-        }
+set_prompt()
+{
+	# Establish all variables that are used
+    infoline=()
+    promptline=()
+    lines=()
 
-PROMPT_COMMAND=set_promtp_colors
+	# Setup the infoline
+    [[ $EUID -eq 0 ]] \
+        && infoline+=( "${fg_red}" ) \
+        || infoline+=( "${fg_green}" )
+    infoline+=( "\u" )
+    infoline+=( "${normal}" )
+    [[ -n $SSH_CLIENT ]] \
+        && infoline+=( "@\h" )
+    infoline+=( ":\w" )
 
-###############################################################################
-# global definitions go here. We may change some of them due to OS specific
-# needs.
-###############################################################################
-# the prompt should look like this: [hh@inferno /usr/local]$
-PS1="[\u@\h \W]\\$ "
+	# Setup the promptline
+	promptline+=( "(" )
+	if [[ $1 -eq 0 ]]; then
+		promptline+=( "${fg_green}" )
+		promptline+=( "✓" )
+	else
+		promptline+=( "${fg_red}" )
+		promptline+=( "✗" )
+	fi
+	promptline+=( "${normal}" )
+	promptline+=( ")" )
+	if `git branch >/dev/null 2>&1`; then
+		promptline+=( "±" )
+	else
+		promptline+=( "≥" )
+	fi
+	promptline+=( " " )
+
+	# Setup the Lines
+    lines+=( "$( IFS=$''; echo "${infoline[*]}" )" )
+    lines+=( "$( IFS=$''; echo "${promptline[*]}" )" )
+	#[[ -n ${vcs_info_msg_0_} ]] && lines+=( "${c[gray]}${vcs_info_msg_0_}${c[reset]}" )
+
+	# Finally set the prompt >.>
+    PS1=$( IFS=$'\n'; echo "${lines[*]}" )
+}
+pre_cmd()
+{
+	# Some manipulation to get the accurate exit status of the last program
+	local lastcall=$?
+	set_prompt $lastcall
+}
+
+PROMPT_COMMAND=pre_cmd
+PS1="> "
 PS2='> '
-export PS1 PS2
+export PS1 PS2 PROMPT_COMMAND
