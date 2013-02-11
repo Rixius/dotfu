@@ -104,5 +104,96 @@ augroup END
 " twig file handling {{{1
 augroup filetype_twig
     autocmd!
-    autocmd BufNewFile,BufRead *.html.twig set ft=php
+    "autocmd BufNewFile,BufRead *.html.twig set ft=php
 augroup END
+
+" Working to Force myself to get used to word/WORD-based travel. {{{1
+" Based on HardMode, GPLv2 code. See https://github.com/wikitopian/hardmode
+let g:trainingMsg = "Don't give up~! Stick it out <3"
+let g:currentMode = "EasyMode"
+nnoremap <leader>x :call ToggleMode()<cr>
+
+fun! HardMode() "{{{2
+    set backspace=0
+
+    nnoremap <left>        <esc>:echo g:trainingMsg<cr>
+    nnoremap <right>       <esc>:echo g:trainingMsg<cr>
+    nnoremap <up>          <esc>:echo g:trainingMsg<cr>
+    nnoremap <down>        <esc>:echo g:trainingMsg<cr>
+    nnoremap <pageup>      <esc>:echo g:trainingMsg<cr>
+    nnoremap <pagedown>    <esc>:echo g:trainingMsg<cr>
+
+    inoremap <left>        <esc>:echo g:trainingMsg<cr>
+    inoremap <right>       <esc>:echo g:trainingMsg<cr>
+    inoremap <up>          <esc>:echo g:trainingMsg<cr>
+    inoremap <down>        <esc>:echo g:trainingMsg<cr>
+    inoremap <pageup>      <esc>:echo g:trainingMsg<cr>
+    inoremap <pagedown>    <esc>:echo g:trainingMsg<cr>
+
+    vnoremap <left>        <esc>:echo g:trainingMsg<cr>
+    vnoremap <right>       <esc>:echo g:trainingMsg<cr>
+    vnoremap <up>          <esc>:echo g:trainingMsg<cr>
+    vnoremap <down>        <esc>:echo g:trainingMsg<cr>
+    vnoremap <pageup>      <esc>:echo g:trainingMsg<cr>
+    vnoremap <pagedown>    <esc>:echo g:trainingMsg<cr>
+
+    nnoremap h <esc>:echo g:trainingMsg<cr>
+    nnoremap j <esc>:echo g:trainingMsg<cr>
+    nnoremap k <esc>:echo g:trainingMsg<cr>
+    nnoremap l <esc>:echo g:trainingMsg<cr>
+
+    vnoremap h <esc>:echo g:trainingMsg<cr>
+    vnoremap j <esc>:echo g:trainingMsg<cr>
+    vnoremap k <esc>:echo g:trainingMsg<cr>
+    vnoremap l <esc>:echo g:trainingMsg<cr>
+
+endfun
+fun! EasyMode() "{{{2
+    set backspace=indent,eol,start
+
+    nunmap <left>
+    nunmap <right>
+    nunmap <up>
+    nunmap <down>
+    nunmap <pageup>
+    nunmap <pagedown>
+
+    iunmap <left>
+    iunmap <right>
+    iunmap <up>
+    iunmap <down>
+    iunmap <pageup>
+    iunmap <pagedown>
+
+    vunmap <left>
+    vunmap <right>
+    vunmap <up>
+    vunmap <down>
+    vunmap <pageup>
+    vunmap <pagedown>
+
+    nunmap h
+    nunmap j
+    nunmap k
+    nunmap l
+
+    vunmap h
+    vunmap j
+    vunmap k
+    vunmap l
+
+endfun
+fun! ToggleMode() "{{{2
+    if g:currentMode == "HardMode"
+        :echo "Leaving HardMode, come back soon. Please."
+        :call EasyMode()
+        let g:currentMode = "EasyMode"
+    elseif g:currentMode == "EasyMode"
+        :echo "Entering HardMode, Prepare to learn Vim. The Hardway."
+        :call HardMode()
+        let g:currentMode = "HardMode"
+    else
+        let g:currentMode = "HardMode"
+        :call ToggleMode()
+    endif
+endfun
