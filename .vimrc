@@ -39,8 +39,8 @@ set noswapfile
 let mapleader = " "
 let g:mapleader = " "
 
-noremap <leader>s :set hlsearch!<cr>
-noremap <leader>l :set list!<cr>
+noremap <leader>s :setlocal hlsearch!<cr>
+noremap <leader>l :setlocal list!<cr>
 nnoremap <leader>z <C-^>
 
 " Map C-Directions to changing space
@@ -60,6 +60,9 @@ inoremap   <esc>   <nop>
 " Tab Movements
 "noremap <C-S-]> :gt<cr>
 "noremap <C-S-[> :gT<cr>
+
+" Open up :%
+nnoremap % :%
 
 
 " Swift vimrc development {{{1
@@ -105,6 +108,7 @@ augroup END
 augroup filetype_twig
     autocmd!
     "autocmd BufNewFile,BufRead *.html.twig set ft=php
+    autocmd BufNewFile,BufRead *.twig ab <buffer> enb {% endblock %}
 augroup END
 
 " Working to Force myself to get used to word/WORD-based travel. {{{1
@@ -197,3 +201,31 @@ fun! ToggleMode() "{{{2
         :call ToggleMode()
     endif
 endfun
+" Adding a string for debugging {{{1
+fun! RandomDebug()
+
+    let g:uuid = ""
+    :python import uuid, vim; vim.command("let g:uuid = '" + str(uuid.uuid1()) + "'")
+
+endfun
+
+" Diff Current Buffer versus Written {{{1
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
+" SVN Diff Open {{{1
+
+fun! SVNDiff()
+
+    new
+    r !svn diff
+    set syntax=diff buftype=nofile
+
+endfun
+com! SVNDiff call SVNDiff()
