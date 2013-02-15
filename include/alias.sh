@@ -48,16 +48,16 @@ alias more=less
 #
 ##
 # the name of the shell (bash of course ;-))
-SHELL=${SHELL:-${BASH:-/usr/local/bin/bash}}
-export SHELL
+#SHELL=${SHELL:-${BASH:-/bin/bash}}
+#export SHELL
 ##
 # Pagers (less is more ;-))
-PAGER=/usr/local/bin/less
+PAGER='/usr/bin/env less'
 # switches for less
 LESS='-i -e -M -P%t?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 export PAGER LESS
 # Editor Selection
-EDITOR=/usr/local/bin/vim 
+EDITOR='/usr/bin/env vim'
 VISUAL=$EDITOR
 FCEDIT=$EDITOR
 export EDITOR VISUAL FCEDIT
