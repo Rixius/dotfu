@@ -64,55 +64,16 @@ inoremap   <esc>   <nop>
 " Open up :%
 nnoremap % :%
 
+" Open up Manpage for word
+nnoremap <s-[> K
+vnoremap <s-[> K
 
-" Swift vimrc development {{{1
-
-augroup vimrc_development
-  autocmd!
-  autocmd BufWritePost .vimrc source $MYVIMRC
-augroup END
-nmap <leader>ev :vsp $MYVIMRC<cr>
-
-
-" NERDTree/Comment{{{1
-nmap <leader>p :NERDTreeToggle<CR>
-let g:NERDTreeShowHidden=1
-let g:NERDTreeIgnore=['tags', '\.git', '\\index$', '\\log$', 'tmp', '\\pkg', '\.swp$', '\.db$', '\.gz$', '\.DS_Store', '\~$', '\.svn']
-nmap \\ <Plug>NERDCommenterInvert
-xmap \\ <Plug>NERDCommenterInvert
-
-" Filetype Detection TODO: Sort out! {{{1
-let g:is_bash = 1           " Highlight all .sh as bash
-let g:ruby_minlines = 500
-augroup filetypedetection
-  autocmd!
-  autocmd BufNewFile,BufRead *.haml set ft=haml
-  autocmd BufNewFile,BufRead *.jade set ft=jade
-  autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
-    \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
-  autocmd BufNewFile,BufRead Gemfile set ft=ruby
-  autocmd BufNewFile,BufRead *.ru set ft=ruby
-  autocmd FileType ruby setlocal comments=:#\ 
-
-
-augroup END
-
-" Vimscript file settings {{{1
-augroup filetype_vim
-  autocmd!
-  autocmd FileType vim setlocal foldmethod=marker
-  autocmd FileType vim setlocal foldlevelstart=0
-augroup END
-
-" twig file handling {{{1
-augroup filetype_twig
-    autocmd!
-    "autocmd BufNewFile,BufRead *.html.twig set ft=php
-    autocmd BufNewFile,BufRead *.twig ab <buffer> enb {% endblock %}
-augroup END
-
-" Working to Force myself to get used to word/WORD-based travel. {{{1
+" Working to better my navigation. {{{1
 " Based on HardMode, GPLv2 code. See https://github.com/wikitopian/hardmode
+
+nnoremap J LztMzz
+nnoremap K HzbM
+
 let g:trainingMsg = "Don't give up~! Stick it out <3"
 let g:currentMode = "EasyMode"
 nnoremap <leader>x :call ToggleMode()<cr>
@@ -201,6 +162,30 @@ fun! ToggleMode() "{{{2
         :call ToggleMode()
     endif
 endfun
+
+
+" Swift vimrc development {{{1
+
+augroup vimrc_development
+  autocmd!
+  autocmd BufWritePost .vimrc source $MYVIMRC
+augroup END
+nmap <leader>ev :vsp $MYVIMRC<cr>
+
+
+" Vimscript file settings {{{1
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+  autocmd FileType vim setlocal foldlevelstart=0
+augroup END
+
+" My Twig settings dissappeared >_> {{{1
+augroup filetype_twig
+    autocmd!
+    autocmd FIleType twig ab <buffer> enb {% endblock %}
+augroup END
+
 " Adding a string for debugging {{{1
 fun! RandomDebug()
 
@@ -229,3 +214,18 @@ fun! SVNDiff()
 
 endfun
 com! SVNDiff call SVNDiff()
+
+" Plugin Configurations~ {{{1
+
+" NERDTree/Comment{{{2
+nmap <leader>p :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore=['tags', '\.git', '\\index$', '\\log$', 'tmp', '\\pkg', '\.swp$', '\.db$', '\.gz$', '\.DS_Store', '\~$', '\.svn']
+nmap \\ <Plug>NERDCommenterInvert
+xmap \\ <Plug>NERDCommenterInvert
+
+" BufExplorer{{{2
+let g:bufExplorerShowDirectories=0
+let g:bufExplorerShowRelativePath=1
+
+
