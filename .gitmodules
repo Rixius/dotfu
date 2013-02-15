@@ -42,4 +42,4 @@
 	url = git://github.com/qbbr/vim-twig.git
 [submodule ".vim/bundle/sparkup"]
 	path = .vim/bundle/sparkup
-	url = https://github.com/rstacruz/sparkup.git
+	url = git@github.com:Rixius/sparkup.git
