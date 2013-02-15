@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/sparkup"]
 	path = .vim/bundle/sparkup
 	url = git@github.com:Rixius/sparkup.git
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = git@github.com:Rixius/solarized.git
