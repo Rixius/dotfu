@@ -184,6 +184,11 @@ augroup END
 augroup filetype_twig
     autocmd!
     autocmd FIleType twig ab <buffer> enb {% endblock %}
+    autocmd FIleType twig ab <buffer> eni {% endif %}
+    autocmd FIleType twig ab <buffer> enf {% endfor %}
+    autocmd FileType twig ab <buffer> nb {% block __ %}
+    autocmd FileType twig ab <buffer> ni {% if __ %}
+    autocmd FileType twig ab <buffer> nf {% for __ as __ %}
 augroup END
 
 " Adding a string for debugging {{{1
