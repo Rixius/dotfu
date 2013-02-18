@@ -229,7 +229,7 @@ nmap <leader>p :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden=1
 let g:NERDTreeIgnore=[
 \    'tags', 
-\    '\.git', 
+\    '\.git$', 
 \    '\\index$', 
 \    '\\log$', 
 \    'tmp', 
