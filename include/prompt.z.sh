@@ -20,22 +20,22 @@ function setprompt() {
 	local -a infoline promptline lines
 
 	# Setup the infoline
-	[[ $EUID -eq 0 ]] && infoline+=( "${c[red]}" ) || infoline+=( "${c[green]}" )
+	[[ $EUID -eq 0 ]] && infoline+=( "${fg[red]}" ) || infoline+=( "${fg[green]}" )
 	infoline+=( "%n" )
-	infoline+=( "${c[reset]}" )
+	infoline+=( "${reset_color}" )
 	[[ -n $SSH_CLIENT ]] && infoline+=( "@%m" )
 	infoline+=( ":%~" )
 
 	# Setup the promptline
 	promptline+=( "(" )
 	if [[ $1 -eq 0 ]]; then
-		promptline+=( "${c[green]}" )
+		promptline+=( "${fg[green]}" )
 		promptline+=( "✓" )
 	else
-		promptline+=( "${c[red]}" )
+		promptline+=( "${fg[red]}" )
 		promptline+=( "✗" )
 	fi
-	promptline+=( "${c[reset]}" )
+	promptline+=( "${reset_color}" )
 	promptline+=( ")" )
 	if `git branch >/dev/null 2>&1`; then
 		promptline+=( "±" )
@@ -46,7 +46,7 @@ function setprompt() {
 
 	# Setup the Lines
 	lines+=( ${(j::)infoline} )
-	[[ -n ${vcs_info_msg_0_} ]] && lines+=( "${c[gray]}${vcs_info_msg_0_}${c[reset]}" )
+	[[ -n ${vcs_info_msg_0_} ]] && lines+=( "${fg[blue]}${vcs_info_msg_0_}${reset_color}" )
 	lines+=( ${(j::)promptline} )
 
 	# Finally set the prompt >.>
@@ -68,8 +68,8 @@ precmd() {
 zstyle ':vcs_info:*' enable git svn hg
 zstyle ':vcs_info:(git*|svn*|hg*):*' get-revision true
 zstyle ':vcs_info:(git*|svn*|hg*):*' check-for-changes true
-zstyle ':vcs_info:(git*|svn*|hg*):*' stagedstr "${c[green]}S${c[gray]}"
-zstyle ':vcs_info:(git*|svn*|hg*):*' unstagedstr "${c[red]}U${c[gray]}"
+zstyle ':vcs_info:(git*|svn*|hg*):*' stagedstr "${fg[green]}S${fg[blue]}"
+zstyle ':vcs_info:(git*|svn*|hg*):*' unstagedstr "${fg[red]}U${fg[blue]}"
 zstyle ':vcs_info:(git*|svn*|hg*)' formats "(%s) %12.12i %c%u %b%m"
 zstyle ':vcs_info:(git*|svn*|hg*)' actionformats "(%s|%a) %12.12i %c%u %b%m"
 
@@ -87,14 +87,14 @@ function +vi-git-st() {
 	  # for git prior to 1.7
 		# ahead=$(git rev-list origin/${hook_com[branch]}..HEAD | wc -l)
 		ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
-		(( $ahead )) && gitstatus+=( "${c3}+${ahead}${c2}" )
+		(( $ahead )) && gitstatus+=( "${c3}${fg[green]}+${ahead}${fg[blue]}${c2}" )
 
 		# for git prior to 1.7
 		# behind=$(git rev-list HEAD..origin/${hook_com[branch]} | wc -l)
 		behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
-		(( $behind )) && gitstatus+=( "${c4}-${behind}${c2}" )
+		(( $behind )) && gitstatus+=( "${c4}${fg[red]}-${behind}${fg[blue]}${c2}" )
 
-		hook_com[branch]="${hook_com[branch]} [${remote} ${(j:/:)gitstatus}]"
+		hook_com[branch]="${hook_com[branch]} [${remote}${(j:/:)gitstatus}]"
 	fi
 }
 # Show any stashed changes
