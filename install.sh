@@ -8,6 +8,7 @@ function link() {
 }
 
 link .gitconfig
+link .subversion
 link .zshrc
 link .vimrc
 link .vim
