@@ -227,7 +227,19 @@ com! SVNDiff call SVNDiff()
 " NERDTree/Comment{{{2
 nmap <leader>p :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden=1
-let g:NERDTreeIgnore=['tags', '\.git', '\\index$', '\\log$', 'tmp', '\\pkg', '\.swp$', '\.db$', '\.gz$', '\.DS_Store', '\~$', '\.svn']
+let g:NERDTreeIgnore=[
+\    'tags', 
+\    '\.git', 
+\    '\\index$', 
+\    '\\log$', 
+\    'tmp', 
+\    '\\pkg', 
+\    '\.swp$', 
+\    '\.db$', 
+\    '\.gz$', 
+\    '\.DS_Store', 
+\    '\~$', 
+\    '\.svn']
 nmap \\ <Plug>NERDCommenterInvert
 xmap \\ <Plug>NERDCommenterInvert
 
