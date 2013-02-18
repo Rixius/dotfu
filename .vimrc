@@ -8,8 +8,10 @@
 call pathogen#infect()
 set nocompatible            " Overides distro default and resets to sane standards
 filetype indent plugin on   " Attempts to determine filetype
-syntax on                   " Enable syntax highlighting
-colorscheme desert
+syntax enable               " Enable syntax highlighting
+set background=dark
+colorscheme solarized
+
 
 set hidden            " Allows swapping of buffers without saving
 set wildmenu          " Better command-line completion
@@ -170,7 +172,7 @@ augroup vimrc_development
   autocmd!
   autocmd BufWritePost .vimrc source $MYVIMRC
 augroup END
-nmap <leader>ev :vsp $MYVIMRC<cr>
+nmap <leader>ev :vsp $HOME/src/.fu/.vimrc<cr>
 
 
 " Vimscript file settings {{{1
@@ -186,9 +188,9 @@ augroup filetype_twig
     autocmd FIleType twig ab <buffer> enb {% endblock %}
     autocmd FIleType twig ab <buffer> eni {% endif %}
     autocmd FIleType twig ab <buffer> enf {% endfor %}
-    autocmd FileType twig ab <buffer> nb {% block __ %}
-    autocmd FileType twig ab <buffer> ni {% if __ %}
-    autocmd FileType twig ab <buffer> nf {% for __ as __ %}
+    autocmd FileType twig ab <buffer> nb {% block _ %}
+    autocmd FileType twig ab <buffer> ni {% if _ %}
+    autocmd FileType twig ab <buffer> nf {% for _ in _ %}
 augroup END
 
 " Adding a string for debugging {{{1
