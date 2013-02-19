@@ -54,7 +54,7 @@ alias more=less
 # Pagers (less is more ;-))
 PAGER='/usr/bin/env less'
 # switches for less
-LESS='-i -e -M -P%t?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
+LESS='-R -i -e -M -P%t?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 export PAGER LESS
 # Editor Selection
 EDITOR='/usr/bin/env vim'
