@@ -4,12 +4,13 @@ export NODE_PATH=\
 export PATH\
 =$HOME/src/.fu/bin\
 :$HOME/.bin\
-:$HOME/local/bin\
-:$PSPDEV/bin\
+:/cygdrive/c/xampp/php\
+:/cygdrive/c/xampp/perl\
+:/cygdrive/c/ProgramData/Composer/bin\
+:/cygdrive/c/Windows\
 :/usr/local/heroku/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
-:/usr/local/heroku/bin\
 :/usr/bin\
 :/bin\
 :/usr/sbin\
