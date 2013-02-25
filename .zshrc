@@ -2,6 +2,7 @@
 export DOTFU=$HOME/src/.fu
 export EDITOR="vim"
 
+source $DOTFU/include/colors.sh
 source $DOTFU/include/path.sh
 source $DOTFU/include/alias.sh
 source $DOTFU/include/prompt.z.sh
