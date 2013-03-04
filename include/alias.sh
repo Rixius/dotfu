@@ -61,3 +61,13 @@ EDITOR='/usr/bin/env vim'
 VISUAL=$EDITOR
 FCEDIT=$EDITOR
 export EDITOR VISUAL FCEDIT
+
+function skey(){
+    if [[ "$1" == "true" ]]; then
+        eval `ssh-agent`
+    else
+        eval `ssh-agent -k`
+    fi
+}
+
+alias clip='xclip -selection clipboard'
