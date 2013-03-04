@@ -172,7 +172,7 @@ augroup vimrc_development
   autocmd!
   autocmd BufWritePost .vimrc source $MYVIMRC
 augroup END
-nmap <leader>ev :vsp $HOME/src/.fu/.vimrc<cr>
+nmap <leader>ev :vsp $HOME/src/dotfu/.vimrc<cr>
 
 
 " Vimscript file settings {{{1

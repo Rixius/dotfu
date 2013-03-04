@@ -1,7 +1,7 @@
 ###
 #
 #  Stephen "Rixius" Middleton .File
-#  License located at <https://github.com/Rixius/.fu/blob/master/LICENSE.md>
+#  License located at <https://github.com/Rixius/dotfu/blob/master/LICENSE.md>
 #
 ###
 
@@ -18,6 +18,6 @@ dotfu-import() {
 
 
 # Core Functionality
-dotfu-import $HOME/src/.fu/include/path.sh
-dotfu-import $HOME/src/.fu/include/prompt.ba.sh
+dotfu-import $HOME/src/dotfu/include/path.sh
+dotfu-import $HOME/src/dotfu/include/prompt.ba.sh
 

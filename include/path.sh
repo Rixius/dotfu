@@ -2,7 +2,7 @@ export NODE_PATH=\
 /usr/local/lib/node
 
 export PATH\
-=$HOME/src/.fu/bin\
+=$HOME/src/dotfu/bin\
 :$HOME/.bin\
 :/cygdrive/c/xampp/php\
 :/cygdrive/c/xampp/perl\

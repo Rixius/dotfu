@@ -1,5 +1,5 @@
-# Path to .fu
-export DOTFU=$HOME/src/.fu
+# Path to dotfu
+export DOTFU=$HOME/src/dotfu
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$DOTFU/.oh-my-zsh
@@ -34,7 +34,7 @@ export ENVIRONMENT='development'
 
 export SHELL="/bin/zsh"
 
-fpath=($HOME/src/.fu/functions $fpath)
+fpath=($HOME/src/dotfu/functions $fpath)
 export fpath
 autoload -U compinit
 compinit

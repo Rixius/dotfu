@@ -1,5 +1,5 @@
 
-export DOTFU=$HOME/src/.fu
+export DOTFU=$HOME/src/dotfu
 export EDITOR="vim"
 
 source $DOTFU/include/colors.sh

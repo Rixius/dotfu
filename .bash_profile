@@ -3,8 +3,8 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 # Load my Input modifications, things not needed in a Shell Script.
-if [ -f ~/src/.fu/include/input.ba.sh ]; then
-    . ~/src/.fu/include/input.ba.sh
+if [ -f ~/src/dotfu/include/input.ba.sh ]; then
+    . ~/src/dotfu/include/input.ba.sh
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
