@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+# Based on
+#   http://stackoverflow.com/a/7105609/212307
+# And
+#   http://stackoverflow.com/a/2365199/212307
+# And
+#   http://stackoverflow.com/a/3713108/212307
+
+require 'webrick'
+require 'optparse'
+require 'pathname'
+OptionParser.accept(Pathname) do |pn|
+    begin
+        dir = Pathname.new(pn) if pn
+    rescue ArgumentError
+        raise OptionParser::InvalidArgument, s
+    end
+end
+
+
+opts = {
+    :port => 9090,
+    :docroot => Dir.pwd,
+}
+
+op = OptionParser.new do |x|
+    x.banner = 'serve <options>'      
+    x.separator ''
+
+    x.on('-p', '--port NUMBER', Integer, 'Run on PORT') do |port|
+        opts[:port] = port
+    end
+
+    x.on('-r', '--root DIR', Pathname, 'Start in DIR') do |dir|
+        opts[:docroot] = dir
+    end
+
+    x.on('-h', '--help', 'Show this Message') do
+        puts op
+        exit
+    end
+
+    #x.on("-h", "--help", "Show this message") 
+        #{ puts op;  exit }
+
+end
+op.parse!(ARGV)
+
+server = WEBrick::HTTPServer.new(
+    :Port => opts[:port],
+    :DocumentRoot => opts[:docroot]
+)
+
+trap('INT') do
+    server.shutdown
+end
+server.start
