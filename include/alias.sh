@@ -3,6 +3,13 @@
 # Some useful aliases.
 #
 ##
+alias  b="bundle"
+alias bi="b install --path vendor"
+alias bp="b package"
+alias be="b exec"
+alias br="be rackup"
+alias binit="bi && bp && echo 'vendor/ruby' >> .gitignore"
+
 alias a="alias"
 alias bye="logout"
 alias cp="cp -i"

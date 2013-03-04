@@ -6,3 +6,5 @@ fi
 if [ -f ~/src/.fu/include/input.ba.sh ]; then
     . ~/src/.fu/include/input.ba.sh
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
