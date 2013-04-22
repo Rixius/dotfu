@@ -17,3 +17,4 @@ export PATH\
 :/sbin\
 :/usr/X11/bin
 
+export LANG='en_US.UTF-8'
