@@ -12,8 +12,6 @@ syntax enable               " Enable syntax highlighting
 set background=dark
 colorscheme solarized
 
-set fileencoding=utf-8
-
 set hidden            " Allows swapping of buffers without saving
 set wildmenu          " Better command-line completion
 set smartcase         " Insensitive Searches
