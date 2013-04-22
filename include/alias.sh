@@ -10,6 +10,8 @@ alias be="b exec"
 alias br="be rackup"
 alias binit="bi && bp && echo 'vendor/ruby' >> .gitignore"
 
+alias tmux="tmux -u"
+
 alias a="alias"
 alias bye="logout"
 alias cp="cp -i"
