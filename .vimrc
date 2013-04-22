@@ -1,4 +1,4 @@
-"
+﻿"
 " Stephen "Rixius" Middleton's
 " .VimRC ViM configuration.
 " (c) 2012 Stephen "Rixius" Middleton
@@ -12,6 +12,7 @@ syntax enable               " Enable syntax highlighting
 set background=dark
 colorscheme solarized
 
+set fileencoding=utf-8
 
 set hidden            " Allows swapping of buffers without saving
 set wildmenu          " Better command-line completion
@@ -25,7 +26,7 @@ set confirm           " If command requires saved file prompt to save file
 set t_vb=             " Disables any errors
 set cmdheight=2       " Avoid \"press <Enter> to continue"
 
-set listchars=tab:▸\ ,trail:-,eol:¬
+set listchars=tab:>\ ,trail:-,eol:=
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
