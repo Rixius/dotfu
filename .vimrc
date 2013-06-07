@@ -45,6 +45,7 @@ noremap <leader>l :setlocal list!<cr>
 nnoremap <leader>z <C-^>
 
 " Map C-Directions to changing space
+nnoremap <leader>= <C-w>=
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
