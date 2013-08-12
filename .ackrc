@@ -1,0 +1,4 @@
+--type-add=html=.twig
+--ignore-dir=cache
+--ignore-dir=vendor
+
