@@ -15,3 +15,6 @@ link .vim
 link .tmux.conf
 link .bash_profile
 link .bashrc
+
+mkdir -p $HOME/.config
+link .config/awesome
