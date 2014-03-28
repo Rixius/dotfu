@@ -10,7 +10,7 @@ set nocompatible            " Overides distro default and resets to sane standar
 filetype indent plugin on   " Attempts to determine filetype
 syntax enable               " Enable syntax highlighting
 set background=dark
-colorscheme solarized
+colorscheme desert
 
 set hidden            " Allows swapping of buffers without saving
 set wildmenu          " Better command-line completion
@@ -29,6 +29,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+set grepprg=ack-grep
 
 set nobackup
 set nowb
@@ -181,6 +183,13 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
   autocmd FileType vim setlocal foldlevelstart=0
 augroup END
+
+" set vim to chdir for each file
+if exists('+autochdir')
+    set autochdir
+else
+    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
 
 " My Twig settings dissappeared >_> {{{1
 augroup filetype_twig
