@@ -46,6 +46,9 @@ noremap <leader>s :setlocal hlsearch!<cr>
 noremap <leader>l :setlocal list!<cr>
 nnoremap <leader>z <C-^>
 
+" Fast Saving
+nnoremap <leader>w :w<cr>
+
 " Map C-Directions to changing space
 nnoremap <leader>= <C-w>=
 noremap <C-j> <C-W>j

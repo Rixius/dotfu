@@ -13,5 +13,7 @@ if [ -d $HOME/.rvm ]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
+unset GNOME_KEYRING_CONTROL
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

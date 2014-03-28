@@ -16,3 +16,6 @@ link .tmux.conf
 link .bash_profile
 link .bashrc
 link .ackrc
+
+mkdir -p $HOME/.config
+link .config/awesome
