@@ -10,7 +10,7 @@ set nocompatible            " Overides distro default and resets to sane standar
 filetype indent plugin on   " Attempts to determine filetype
 syntax enable               " Enable syntax highlighting
 set background=dark
-colorscheme solarized
+colorscheme desert
 
 set hidden            " Allows swapping of buffers without saving
 set wildmenu          " Better command-line completion
