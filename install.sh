@@ -15,3 +15,4 @@ link .vim
 link .tmux.conf
 link .bash_profile
 link .bashrc
+link .ackrc
