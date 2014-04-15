@@ -75,8 +75,8 @@ tags = {
     names = {
         "main",
         "www",
-        "evince",
-        4,
+        "misc",
+        "pidgin",
         5
     },
     layout = {

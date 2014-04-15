@@ -6,6 +6,9 @@
 "
 " Core Features{{{1
 call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 set nocompatible            " Overides distro default and resets to sane standards
 filetype indent plugin on   " Attempts to determine filetype
 syntax enable               " Enable syntax highlighting
@@ -235,6 +238,8 @@ endfun
 com! SVNDiff call SVNDiff()
 
 " Plugin Configurations~ {{{1
+
+:set tags=php.tags
 
 " NERDTree/Comment{{{2
 nmap <leader>p :NERDTreeToggle<CR>

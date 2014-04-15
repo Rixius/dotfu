@@ -70,3 +70,12 @@
 [submodule ".vim/bundle/snippets"]
 	path = .vim/bundle/snippets
 	url = https://github.com/Rixius/snipmate-snippets.git
+[submodule ".vim/bundle/FuzzyFinder"]
+	path = .vim/bundle/FuzzyFinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule ".vim/bundle/taggatron"]
+	path = .vim/bundle/taggatron
+	url = https://github.com/joonty/vim-taggatron.git
