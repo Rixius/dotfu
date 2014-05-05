@@ -190,12 +190,14 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldlevelstart=0
 augroup END
 
-" set vim to chdir for each file
-if exists('+autochdir')
-    set autochdir
-else
-    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-endif
+" Ruby settings {{{1
+augroup filetype_ruby
+    autocmd!
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal expandtab
+augroup END
 
 " My Twig settings dissappeared >_> {{{1
 augroup filetype_twig
@@ -240,6 +242,10 @@ com! SVNDiff call SVNDiff()
 " Plugin Configurations~ {{{1
 
 :set tags=php.tags
+let g:taggatron_enabled = 1
+let g:tagcommands = {
+\    "php" : {"tagfile":"php.tags","args":"-R --h *.php"},
+\}
 
 " NERDTree/Comment{{{2
 nmap <leader>p :NERDTreeToggle<CR>
