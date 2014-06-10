@@ -190,6 +190,15 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldlevelstart=0
 augroup END
 
+" PHP settings {{{1
+augroup filetype_php
+    autocmd!
+    autocmd FileType php setlocal tabstop=4
+    autocmd FileType php setlocal softtabstop=4
+    autocmd FileType php setlocal shiftwidth=4
+    autocmd FileType php setlocal expandtab
+augroup END
+
 " Ruby settings {{{1
 augroup filetype_ruby
     autocmd!
