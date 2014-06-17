@@ -7,26 +7,25 @@ settings = {
     nick = "rixius";
   };
 };
-servers = (
-  {
-    address = "chat.freenode.net";
-    chatnet = "freenode";
-    password = "";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "yes";
-    autoconnect = "yes";
-  }
-);
-chatnets = { freenode = { type = "IRC"; }; };
 ignores = (
   {
     level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
   }
 );
-channels = (
-  { name = "#faif"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##javascript"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#coffeescript"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#wowhead"; chatnet = "freenode"; autojoin = "yes"; }
+chatnets = {
+  freenode = {
+    type = "IRC";
+  };
+};
+servers = (
+  {
+    address = "chat.freenode.net";
+    chatnet = "freenode";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_cert = "~/.irssi/rixius.pem";
+    ssl_verify = "no";
+    ssl_cafile = "~/.irssi/UTN-USERFirst-Hardware.pem";
+    autoconnect = "no";
+  }
 );
