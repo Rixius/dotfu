@@ -12,6 +12,7 @@ link .subversion
 link .zshrc
 link .vimrc
 link .vim
+link .irssi
 link .irbrc
 link .irbrc_rails
 link .tmux.conf
