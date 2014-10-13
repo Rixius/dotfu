@@ -25,9 +25,6 @@
 [submodule ".vim/bundle/ruby"]
 	path = .vim/bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = https://github.com/Rixius/oh-my-zsh
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
