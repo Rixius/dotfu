@@ -18,8 +18,11 @@ dotfu-import() {
 
 
 # Core Functionality
+dotfu-import $HOME/src/dotfu/include/alias.sh
 dotfu-import $HOME/src/dotfu/include/path.sh
 dotfu-import $HOME/src/dotfu/include/prompt.ba.sh
+dotfu-import $HOME/src/dotfu/include/options.ba.sh
+dotfu-import $HOME/.rvm/scripts/rvm
 
 
 ### Added by the Heroku Toolbelt

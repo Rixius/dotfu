@@ -10,6 +10,6 @@ shopt -s nocaseglob
 shopt -s histappend
 ##
 # History Controls
-export HISTCONTROL-ignoredups
+export HISTCONTROL=ignoredups
 unset HISTSIZE
 unset HISTFILESIZE

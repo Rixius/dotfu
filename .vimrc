@@ -250,8 +250,8 @@ com! SVNDiff call SVNDiff()
 
 " Plugin Configurations~ {{{1
 
-:set tags=php.tags
-let g:taggatron_enabled = 1
+:set tags=tags
+let g:taggatron_enabled = 0
 let g:tagcommands = {
 \    "php" : {"tagfile":"php.tags","args":"-R --h *.php"},
 \}
