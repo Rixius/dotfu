@@ -7,6 +7,9 @@ function link() {
 
 }
 
+git submodule init
+git submodule update --recursive
+
 link .gitconfig
 link .subversion
 link .zshrc
