@@ -17,6 +17,30 @@ rescue LoadError => err
   warn "Couldn't load awesome_print: #{err}"
 end
 
+# hirb: some nice stuff for Rails
+begin
+  require 'hirb'
+  HIRB_LOADED = true
+rescue LoadError
+  HIRB_LOADED = false
+end
+
+def enable_hirb
+  if HIRB_LOADED
+    Hirb.enable
+  else
+    puts "hirb is not loaded"
+  end
+end
+
+def disable_hirb
+  if HIRB_LOADED
+    Hirb.disable
+  else
+    puts "hirb is not loaded"
+  end
+end
+
 # load .irbrc_rails in rails environments
 railsrc_path = File.expand_path('~/.irbrc_rails')
 if ( ENV['RAILS_ENV'] || defined? Rails ) && File.exist?( railsrc_path )

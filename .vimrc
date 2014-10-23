@@ -33,7 +33,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-set grepprg=ack-grep
+set grepprg=ack
 
 set nobackup
 set nowb
@@ -63,9 +63,6 @@ noremap   <up>      <nop>
 noremap   <left>    <nop>
 noremap   <right>   <nop>
 noremap   <down>    <nop>
-
-inoremap   jk      <esc>
-inoremap   <esc>   <nop>
 
 " Tab Movements
 "noremap <C-S-]> :gt<cr>
@@ -274,6 +271,11 @@ let g:NERDTreeIgnore=[
 \    '\.svn']
 nmap \\ <Plug>NERDCommenterInvert
 xmap \\ <Plug>NERDCommenterInvert
+" nerdtree mappings settings {{{3
+augroup filetype_nerdtree
+    autocmd!
+    autocmd FileType nerdtree map _ PX
+augroup END
 
 " BufExplorer{{{2
 let g:bufExplorerShowDirectories=0

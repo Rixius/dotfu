@@ -1,11 +1,4 @@
 #!/usr/bin/env ruby
-# hirb: some nice stuff for Rails
-begin
-  require 'hirb'
-  HIRB_LOADED = true
-rescue LoadError
-  HIRB_LOADED = false
-end
 
 require 'logger'
 
@@ -24,25 +17,16 @@ def set_logger_to(logger)
   ActiveRecord::Base.clear_reloadable_connections!
 end
 
+def efind(email)
+  User.find_by_email email
+end
+
+alias :enable_hirb_old :enable_hirb
 def enable_hirb
   if HIRB_LOADED
     Hirb::Formatter.dynamic_config['ActiveRecord::Base']
-    Hirb.enable
-  else
-    puts "hirb is not loaded"
   end
-end
-
-def disable_hirb
-  if HIRB_LOADED
-    Hirb.disable
-  else
-    puts "hirb is not loaded"
-  end
-end
-
-def efind(email)
-  User.find_by_email email
+  enable_hirb_old
 end
 
 # set a nice prompt

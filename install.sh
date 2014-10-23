@@ -7,11 +7,16 @@ function link() {
 
 }
 
-git submodule init
-git submodule update --recursive
+function zlink() {
+
+    rm $HOME/$(basename $1)
+    ln -s $PWD/$1 $HOME/$(basename $1)
+
+}
 
 link .gitconfig
 link .subversion
+link .zprezto
 link .zshrc
 link .vimrc
 link .vim
@@ -22,6 +27,12 @@ link .tmux.conf
 link .bash_profile
 link .bashrc
 link .ackrc
+
+zlink .zprezto/runcoms/zlogin
+zlink .zprezto/runcoms/zlogout
+zlink .zprezto/runcoms/zpreztorc
+zlink .zprezto/runcoms/zprofile
+zlink .zprezto/runcoms/zshenv
 
 mkdir -p $HOME/.config
 link .config/awesome

@@ -4,6 +4,7 @@ export NODE_PATH=\
 export PATH\
 =$HOME/src/dotfu/bin\
 :$HOME/.bin\
+:$HOME/.rvm/scripts/rvm\
 :/cygdrive/c/xampp/php\
 :/cygdrive/c/xampp/perl\
 :/cygdrive/c/ProgramData/Composer/bin\

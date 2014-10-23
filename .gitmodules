@@ -91,3 +91,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "bin/spotifycontrol"]
+	path = bin/spotifycontrol
+	url = https://github.com/Rixius/SpotifyControl.git

@@ -5,6 +5,7 @@
 ##
 alias  b="bundle"
 alias bi="b install --path vendor"
+alias bu="b update"
 alias bp="b package"
 alias be="b exec"
 alias br="be rackup"
