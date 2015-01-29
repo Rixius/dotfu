@@ -1,0 +1,5 @@
+#compdef spotify
+
+_spotify() {
+}
+_spotify "$@"

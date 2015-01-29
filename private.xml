@@ -121,6 +121,12 @@
                     KeyCode::BACKQUOTE
                 </autogen>
             </item>
+            <item>
+                <name>Train new Paraenthesis</name>
+                <identifier>rixius.train.paren</identifier>
+                <autogen>--KeyToKey-- KeyCode::KEY_9, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::VK_NONE</autogen>
+                <autogen>--KeyToKey-- KeyCode::KEY_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::VK_NONE</autogen>
+            </item>
         </item>
     </list>
 </root>

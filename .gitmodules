@@ -94,3 +94,6 @@
 [submodule "bin/spotifycontrol"]
 	path = bin/spotifycontrol
 	url = https://github.com/Rixius/SpotifyControl.git
+[submodule ".vim/bundle/jsbeautify"]
+	path = .vim/bundle/jsbeautify
+	url = https://github.com/maksimr/vim-jsbeautify.git

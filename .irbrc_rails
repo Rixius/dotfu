@@ -42,3 +42,10 @@ IRB.conf[:PROMPT_MODE] = :RAILS
 
 # turn on the loud logging by default
 IRB.conf[:IRB_RC] = Proc.new { loud_logger }
+
+#random selection
+class ActiveRecord::Base
+  def self.random
+    all.shuffle.first
+  end
+end

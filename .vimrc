@@ -78,8 +78,8 @@ vnoremap <s-[> K
 " Working to better my navigation. {{{1
 " Based on HardMode, GPLv2 code. See https://github.com/wikitopian/hardmode
 
-nnoremap J LztMzz
-nnoremap K HzbM
+nnoremap J Lj''j
+nnoremap K Hk''k
 
 let g:trainingMsg = "Don't give up~! Stick it out <3"
 let g:currentMode = "EasyMode"
@@ -179,6 +179,14 @@ augroup vimrc_development
 augroup END
 nmap <leader>ev :vsp $HOME/src/dotfu/.vimrc<cr>
 
+" Colorscheme Helpers {{{2
+nnoremap <C-S-P> :call <SID>SynStack()<cr>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " Vimscript file settings {{{1
 augroup filetype_vim
@@ -203,6 +211,23 @@ augroup filetype_ruby
     autocmd FileType ruby setlocal softtabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal expandtab
+    autocmd FileType eruby setlocal tabstop=2
+    autocmd FileType eruby setlocal softtabstop=2
+    autocmd FileType eruby setlocal shiftwidth=2
+    autocmd FileType eruby setlocal expandtab
+    autocmd FileType yaml setlocal tabstop=2
+    autocmd FileType yaml setlocal softtabstop=2
+    autocmd FileType yaml setlocal shiftwidth=2
+    autocmd FileType yaml setlocal expandtab
+augroup END
+
+" Javascript settings {{{1
+augroup filetype_javascript
+    autocmd!
+    autocmd FileType javascript setlocal tabstop=2
+    autocmd FileType javascript setlocal softtabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2
+    autocmd FileType javascript setlocal expandtab
 augroup END
 
 " My Twig settings dissappeared >_> {{{1

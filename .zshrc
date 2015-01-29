@@ -35,3 +35,6 @@ unset GNOME_KEYRING_CONTROL
 export PATH="/usr/local/heroku/bin:$PATH"
 
 #which boot2docker &>/dev/null && $(boot2docker shellinit) >/dev/null
+
+PERL_MB_OPT="--install_base \"/Users/rixius/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/rixius/perl5"; export PERL_MM_OPT;

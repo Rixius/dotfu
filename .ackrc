@@ -2,4 +2,6 @@
 twig=.twig
 --ignore-dir=cache
 --ignore-dir=vendor
+--ignore-dir=log
+--ignore-file=is:tags
 

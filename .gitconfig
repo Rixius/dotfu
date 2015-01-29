@@ -75,3 +75,5 @@
     status      = auto
 [push]
 	default = matching
+[git-up "bundler"]
+	check = true
