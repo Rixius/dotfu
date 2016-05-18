@@ -1,4 +1,7 @@
-# Vim
+# Dotfu
+A collection of my personal scripts for editing and general shell use.
 
-symlink .vim and .vimrc
-run bin/vimbundles to install plugins
+##Installation
+```
+$ bash install.sh
+```
