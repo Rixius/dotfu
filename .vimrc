@@ -4,12 +4,30 @@
 " (c) 2012 Stephen "Rixius" Middleton
 " Licensed under an MIT-Style Free and Open Software License
 "
-" Core Features{{{1
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
+" Set up Vundle {{{1
 set nocompatible            " Overides distro default and resets to sane standards
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Control Vundle with Vundle
+Plugin 'Vundle/Vundle.vim'
+
+"Tpope plugins
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-unimpaired'
+
+"NERDPlugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'markabe/bufexplorer'
+Plugin 'godlygeek/tabular'
+
+call vundle#end()
+
+" Core Features{{{1
 filetype indent plugin on   " Attempts to determine filetype
 syntax enable               " Enable syntax highlighting
 set background=dark
