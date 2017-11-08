@@ -16,7 +16,6 @@ function zlink() {
 
 link .gitconfig
 link .subversion
-link .zprezto
 link .zshrc
 link .vimrc
 link .vim
@@ -28,11 +27,6 @@ link .bash_profile
 link .bashrc
 link .ackrc
 
-zlink .zprezto/runcoms/zlogin
-zlink .zprezto/runcoms/zlogout
-zlink .zprezto/runcoms/zpreztorc
-zlink .zprezto/runcoms/zprofile
-zlink .zprezto/runcoms/zshenv
-
 mkdir -p $HOME/.config
 link .config/awesome
+link .config/nvim
